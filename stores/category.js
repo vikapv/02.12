@@ -1,7 +1,7 @@
 import {defineStore} from "pinia";
 import {api} from "~/api/index.js";
 
-export const useCategoryStore = defineStore('category', () => {
+export const  useCategoryStore = defineStore('category', () => {
     const categories = ref([]);
     const fetchCategories = async () => {
         const res = await api.get('/categories');

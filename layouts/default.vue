@@ -12,17 +12,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+
+              <NuxtLink class="nav-link active" to="/">Home</NuxtLink>
             </li>
           </ul>
-          <button type="button" class="btn btn-dark">signUp</button>
-          <button type="button" class="btn btn-dark">signIn</button>
+          <div class="ms-auto d-flex">
+            <template>
+            <NuxtLink to="/signin"><button class="btn btn-dark" type="button" >Sign In</button></NuxtLink>
+            <NuxtLink to="/signup"><button class="btn btn-dark" type="button" >Sign Up</button></NuxtLink>
+            </template>
+          </div>
 
         </div>
       </div>
@@ -45,4 +44,5 @@
 
 </template>
 <script setup lang="ts">
+
 </script>
