@@ -25,11 +25,16 @@
               <!-- Если пользователь аутентифицирован -->
               <template v-if="isAuthenticated">
                 <button
-                    class="btn btn-sm btn-outline-light mx-2"
+                    class="btn btn-sm btn-outline-secondary mx-2"
+                >
+                  User
+                </button>
+                <button
+                    class="btn btn-sm btn-outline-secondary mx-2"
                     type="button"
                     @click="signOut"
                 >
-                  Sign Out
+                  Exit
                 </button>
               </template>
               <!-- Если пользователь не аутентифицирован -->

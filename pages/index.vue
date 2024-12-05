@@ -34,7 +34,7 @@ import { useRouter } from  "vue-router";
 const router = useRouter();
 
 const navigateTo = (filmId: string) => {
-  router.push({ path: '/movieView', query: { id: filmId } });
+  router.push({ path: `/film/${filmId}` });
 };
 </script>
 
@@ -88,7 +88,7 @@ const navigateTo = (filmId: string) => {
                 {{category.name}}
               </template>
             </p>
-            <button type="button" class="btn btn-info">Info</button>
+            <button @click="navigateTo(film.id)" type="button" class="btn btn-info">Info</button>
 
           </div>
         </div>
@@ -123,7 +123,7 @@ const navigateTo = (filmId: string) => {
            class="page-link"
            href="#">{{page}}</a></li>
       <li
-          :class="{'disabled' : filmStore.currentPage === 10}"
+          :class="{'disabled' : filmStore.currentPage === 1}"
           class="page-item">
         <a
             @click.prevent = "goto(filmStore.currentPage + 1)"
