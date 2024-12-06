@@ -24,11 +24,9 @@
             <div class="ms-auto d-flex align-items-center">
               <!-- Если пользователь аутентифицирован -->
               <template v-if="isAuthenticated">
-                <button
-                    class="btn btn-sm btn-outline-secondary mx-2"
-                >
-                  User
-                </button>
+                <NuxtLink to="/profile">
+                  <button class="btn btn-sm btn-outline-secondary" type="button">Profile</button>
+                </NuxtLink>
                 <button
                     class="btn btn-sm btn-outline-secondary mx-2"
                     type="button"
@@ -81,3 +79,88 @@ const signOut = () => {
   router.push('/');
 };
 </script>
+
+<style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #343a40;
+  z-index: 1000;
+}
+
+.navbar {
+  padding: 0.8rem 2rem;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  margin-right: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff0000;
+}
+
+.btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 80px 2rem 2rem;
+  background-color: #ffffff;
+}
+
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 1.5rem 0;
+}
+
+.footer .lead {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+}
+</style>
